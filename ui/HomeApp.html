@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Home App</title>
+    <script src="./resources/particle/particle.min.js"></script>
+</head>
+<body>
+    <div id="indexPage">
+        <!-- index page and landing page-->
+        <div class="title tocenter col-12">
+            <h2>Home Pod</h2>
+            <i class="fa fa-home fa-3x"></i>
+        </div>
+        <br/>
+        <!-- sign in button-->
+        <div class="tocenter">
+            <button class="signinButton" id="signinButton" type="button">Sign In</button>
+        </div>
+        <br>
+        <!-- create account button-->
+        <div class="tocenter">
+            <button class="createAccountButton" id="createAccountButton" type="button">Create Account</button>
+        </div>
+
+    </div>
+
+    <div id="signinPage">
+        <div class="title tocenter col-12">
+            <!-- sign in page with user name and passwor parameters-->
+            <h2>Home Pod</h2>
+            <i class="fa fa-home fa-3x"></i>
+            <h4>Sign In</h4>
+        </div>
+        <br/>
+        <div class="username tocenter">
+            <label for="signinUsername">Username:</label>
+            <input type="text" id="signinUsername" placeholder="username" name="signinUsername">
+        </div>
+        <br/>
+        <div class="password tocenter">
+            <label for="signinPassword">Password:</label>
+            <input type="password" id="signinPassword" placeholder="password" name="signinPassword">
+        </div>
+        <br/>
+        <div class="signin tocenter">
+            <button class="signinButton" id="signin" type="button">Sign In</button>
+        </div>
+    </div>
+
+    <div id="createAccountPage">
+        <!-- create account page with username, password, and confirm password parameters-->
+        <div class="title tocenter col-12">
+            <h2>Home Pod</h2>
+            <i class="fa fa-home fa-3x"></i>
+            <h4>Create Account</h4>
+        </div>
+        <br/>
+        <!-- Username input -->
+        <div class="username tocenter">
+            <label for="createAccountUsername">Username:</label>
+            <input type="text" id="createAccountUsername" placeholder="username" name="createAccountUsername">
+        </div>
+        <br/>
+        <!-- Password input -->
+        <div class="password tocenter">
+            <label for="createAccountPassword">Password:</label>
+            <input type="password" id="createAccountPassword" placeholder="password" name="createAccountPassword">
+        </div>
+        <br/>
+        <!-- Password confirm input -->
+        <div class="password tocenter">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="password" name="confirmPassword">
+        </div>
+        <br/>
+        <!-- Create account button -->
+        <div class="signin tocenter">
+            <button class="createAccountButton" id="createAccount" type="button" >Create Account</button>
+        </div>
+    </div>
+
+
+    <!-- HOME PAGE -->
+    <div id="main">
+        <div class="title tocenter col-12">
+            <h2>Home Pod</h2>
+            <i class="fa fa-home fa-3x"></i>
+            <h4 id="welcomeUser"> Welcome </h4>
+            <button id="logoutButton" class="logoutbutton" type="button">Logout</button>
+        </div>
+        <br/>
+        <!-- Header that contains navigation buttons to home and advanced-->
+        <div id="header" class="tocenter col-6">
+            <div>
+                <h3><button id="securityButton" class="securityButton" type="button">Security</button></h3>
+            </div>
+            <div>
+                <h3><button id="utilitiesButton" class="utilitiesButton" type="button">Utilities</button></h3>
+            </div>
+        </div>
+        <br/>
+        <div id="securityPage">
+            <div class="frontdoor tocenter">
+                <!-- Load content while fetching data from argon  -->
+                <i id="lockIcon" class="fa fa-lock fa-2x"></i><i id="unlockIcon" class="fa fa-unlock fa-2x"></i>
+                <h4 id="doorText"> LOADING... </h4>
+                <button id="lockButton" class="lockbutton" type="button">Lock</button>
+                <button id="unlockButton" class="unlockbutton" type="button">Unlock</button>
+            </div>
+            <br/>
+            <br/>
+            <div class="tocenter">
+                <i class="fa fa-bullhorn fa-2x"></i>
+            </div>
+            <div class="lights tocenter">
+                <!-- Alarm feature and suspicious activity detected signals  -->
+                <p>Alarm Feature </p>
+                <input type="checkbox" id="alarmSwitch" /><label for="alarmSwitch" class="labbel">Toggle</label>
+            </div>
+            <div class="tocenter red" id="danger">
+                <p>SUSPICIOUS ACTIVITY DETECTED</p>
+            </div>
+        </div>
+    
+        <div id="utilitiesPage">
+
+            <div class="tocenter">
+                <i class="fa fa-lightbulb-o fa-2x"></i>
+            </div>
+            <div class="lights tocenter">
+                <!-- House Lights  -->
+                <p>House Lights  </p>
+                <input type="checkbox" id="lightSwitch" /><label for="lightSwitch" class="labbel">Toggle</label>
+            </div>
+            <br/>
+            <div class="tocenter col-12">
+                <i class="fa fa-snowflake-o fa-2x"></i>
+            </div>
+            <div class="aircon tocenter col-12">
+                <!-- Air conditioning units  -->
+                <p>Air Conditioner  </p>
+                <input type="checkbox" id="acSwitch" /><label for="acSwitch" class="labbel">Toggle</label>
+            </div>
+            <div class="aircon tocenter col-12" id="autoMode">
+                <p>Auto Mode  </p>
+                <input type="checkbox" id="autoSwitch" /><label for="autoSwitch" class="labbel">Toggle</label>
+            </div>
+            <div class="aircon tocenter col-12" id="autoTemp">
+                <!-- You can set your autoOfftimer for a few seconds  -->
+                <div id="autoOffTimer">
+                    <input type="number" placeholder="sec" id="autoOffTime" class="autoCloseTime" min=5 max=120>
+                    <button id="autoOffButton" class="autoCloseSetButton" type="button">Set</button>
+                    <br/><br/>
+                    <span id="autoOffTimeStatus">Timer set to 10 seconds</span>
+                </div>
+            </div>
+        </div>   
+            
+    </div>
+    
+    <script src="HomeApp.js"></script>
+    <script src="Home.js"></script>
+</body>
+</html>
